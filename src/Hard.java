@@ -7,14 +7,9 @@ class Hard {
 
         Integer entradaCategoria;
         Integer entradaArma;
+
         Double saldo = 1500.00;
-
-        Double[] valoresMetralhadoras = new Double[]{400.00, 560.00, 1090.00, 1200.00, 3600.00};
-        Double[] valoresPistolas = new Double[]{200.00, 1500.00, 900.00, 1250.00, 600.00};
-        Double[] valoresRifles = new Double[]{1100.00, 7560.00, 700.00, 400.00, 850.00};
-        Double[] valoresFacas = new Double[]{120.00, 60.00, 300.00, 220.00, 500.00};
-        Double[] valoresSerras = new Double[]{330.00, 580.00, 1350.00, 1400.00, 9000.00};
-
+        Double[] valoresArmas = new Double[]{};
 
         do {
             System.out.println("****************************************\n"
@@ -28,13 +23,13 @@ class Hard {
                     + "[-1]Sair\n"
                     + "****************************************\n"
                     + "Digite o número da categoria desejada: ");
-
             entradaCategoria = scanner.nextInt();
 
 
             switch (entradaCategoria) {
 
                 case 1:
+                    Double[] valoresMetralhadoras = new Double[]{400.00, 560.00, 1090.00, 1200.00, 3600.00};
                     System.out.println("Categoria: Metralhadoras\n"
                             + "****************************************\n"
                             + "[1]P90 - " + valoresMetralhadoras[0] + "\n"
@@ -42,9 +37,12 @@ class Hard {
                             + "[3]R-40 - " + valoresMetralhadoras[2] + "\n"
                             + "[4]F30 - " + valoresMetralhadoras[3] + "\n"
                             + "[5]SSW - " + valoresMetralhadoras[4] + "\n");
+
+                    valoresArmas = valoresMetralhadoras;
                     break;
 
                 case 2:
+                    Double[] valoresPistolas = new Double[]{200.00, 1500.00, 900.00, 1250.00, 600.00};
                     System.out.println("Categoria: Pistolas\n"
                             + "****************************************\n"
                             + "[1]P123190 - " + valoresPistolas[0] + "\n"
@@ -52,9 +50,11 @@ class Hard {
                             + "[3]R1123-40 - " + valoresPistolas[2] + "\n"
                             + "[4]F13230 - " + valoresPistolas[3] + "\n"
                             + "[5]S132SW - " + valoresPistolas[4] + "\n");
+                    valoresArmas = valoresPistolas;
                     break;
 
                 case 3:
+                    Double[] valoresRifles = new Double[]{1100.00, 7560.00, 700.00, 400.00, 850.00};
                     System.out.println("Categoria: Rifles\n"
                             + "****************************************\n"
                             + "[1]T10 - " + valoresRifles[0] + "\n"
@@ -62,9 +62,11 @@ class Hard {
                             + "[3]R9000 - " + valoresRifles[2] + "\n"
                             + "[4]F33330 - " + valoresRifles[3] + "\n"
                             + "[5]SSwwwW - " + valoresRifles[4] + "\n");
+                    valoresArmas = valoresRifles;
                     break;
 
                 case 4:
+                    Double[] valoresFacas = new Double[]{120.00, 60.00, 300.00, 220.00, 500.00};
                     System.out.println("Categoria: Facas\n"
                             + "****************************************\n"
                             + "[1]Ninja - " + valoresFacas[0] + "\n"
@@ -72,9 +74,11 @@ class Hard {
                             + "[3]Serrinha - " + valoresFacas[2] + "\n"
                             + "[4]Cega - " + valoresFacas[3] + "\n"
                             + "[5]Lisa - " + valoresFacas[4] + "\n");
+                    valoresArmas = valoresFacas;
                     break;
 
                 case 5:
+                    Double[] valoresSerras = new Double[]{330.00, 580.00, 1350.00, 1400.00, 9000.00};
                     System.out.println("Categoria: Serras\n"
                             + "****************************************\n"
                             + "[1]Elétrica - " + valoresSerras[0] + "\n"
@@ -82,6 +86,7 @@ class Hard {
                             + "[3]Para Asfalto - " + valoresSerras[2] + "\n"
                             + "[4]Motorizada - " + valoresSerras[3] + "\n"
                             + "[5]Esmirilhadeira - " + valoresSerras[4] + "\n");
+                    valoresArmas = valoresSerras;
                     break;
 
                 case -1:
@@ -103,25 +108,6 @@ class Hard {
                     entradaArma--;
 
                     Double valorArma = 0.00;
-                    Double[] valoresArmas = new Double[]{};
-
-                    switch (entradaCategoria) {
-                        case 1:
-                            valoresArmas = valoresMetralhadoras;
-                            break;
-                        case 2:
-                            valoresArmas = valoresPistolas;
-                            break;
-                        case 3:
-                            valoresArmas = valoresRifles;
-                            break;
-                        case 4:
-                            valoresArmas = valoresFacas;
-                            break;
-                        case 5:
-                            valoresArmas = valoresSerras;
-                            break;
-                    }
 
                     for (int i = 0; i < 5; i++) {
                         if (entradaArma == i) {
