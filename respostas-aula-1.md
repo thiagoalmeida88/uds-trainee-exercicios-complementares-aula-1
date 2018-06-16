@@ -35,3 +35,5 @@ Observação: Caso o código não seja nenhum dos especificados o produto deve ser e
 7. (5 pontos) Resolver o exercícios hard core 3 dos slides acima citados.
 
 /src/Hard.java
+
+8. (1 ponto) Foto do Github cadastrada no gravatar: OK!
