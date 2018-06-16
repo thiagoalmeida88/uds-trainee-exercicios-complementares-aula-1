@@ -129,7 +129,7 @@ class Hard {
             } while (entradaCategoria != -1);
 
         } catch (Exception ex) {
-            System.out.println(ex.toString() + " - Erro na operação! Digite opções de 1 a 5.");
+            System.out.println(ex.toString() + " - Erro na operação!");
         }
     }
 
