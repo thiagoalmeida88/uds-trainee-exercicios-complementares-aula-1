@@ -8,19 +8,24 @@ class RegiaoProduto {
 
         Integer entrada;
 
-        do {
-            System.out.println("*******************\n"
-                    + "Produtos\n"
-                    + "[-1]Sair\n"
-                    + "*******************\n"
-                    + "Digite o número do produto: \n");
+        try {
 
-            entrada = scanner.nextInt();
+            do {
+                System.out.println("*******************\n"
+                        + "Produtos do Brasil - Regiões \n"
+                        + "[-1]Sair\n"
+                        + "*******************\n"
+                        + "Digite o número do produto: \n");
 
-            System.out.println("*******************\n"
-                    + "Produto da Região: " + verificarRegiaoDoProduto(entrada));
-        } while (entrada != -1);
+                entrada = scanner.nextInt();
 
+                System.out.println("*******************\n"
+                        + "Produto da Região: " + verificarRegiaoDoProduto(entrada));
+            } while (entrada != -1);
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString() + " - Erro na operação!");
+        }
     }
 
     public static String verificarRegiaoDoProduto(Integer entrada) {
