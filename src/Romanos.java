@@ -4,32 +4,39 @@ import java.util.Scanner;
 class Romanos {
     public static void main(String[] args) {
 
-
         Scanner scanner = new Scanner(System.in);
 
         Integer entrada;
 
-        do {
-            System.out.println("Digite ai: ");
+        try {
 
-            entrada = scanner.nextInt();
+            do {
+                System.out.println("**********************\n"
+                        + "Converter Inteiros para Romanos\n"
+                        + "[-1] Sair\n"
+                        + "**********************\n"
+                        + "Digite um número inteiro: ");
 
-            System.out.println("O número convertido para algarismo romano é: " + converterInteiroParaRomanos(entrada));
-        } while (entrada != -1);
+                entrada = scanner.nextInt();
+
+                System.out.println("O nº inteiro convertido para algarismo romano é: " + converterInteiroParaRomano(entrada));
+            } while (entrada != -1);
+
+        }catch (Exception ex){
+            System.out.println(ex.toString()+" - Erro na operação!");
+        }
     }
 
-
-    public static String converterInteiroParaRomanos(Integer numeroDecimal) {
+    public static String converterInteiroParaRomano(Integer numeroDecimal) {
 
         numeroDecimal--;
-        String conveterRomano = "";
-        Integer cont;
+        String conveterRomano;
 
         String[] iniciaValores = new String[]{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
 
-        for (cont = 0; cont < 10; cont++) {
-            if (numeroDecimal == cont) {
-                conveterRomano = iniciaValores[cont];
+        for (int i=0; i < 10; i++) {
+            if (numeroDecimal == i) {
+                conveterRomano = iniciaValores[i];
                 return conveterRomano;
             }
         }
