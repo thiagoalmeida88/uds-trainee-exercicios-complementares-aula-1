@@ -8,19 +8,24 @@ class PositivoNegativo {
 
         Double entrada;
 
-        do {
-            System.out.println("*******************\n"
-                    + "Positvo ou Negativo?\n"
-                    + "[-1]Sair\n"
-                    + "*******************\n"
-                    + "Digite um número: \n");
+        try {
 
-            entrada = scanner.nextDouble();
+            do {
+                System.out.println("*******************\n"
+                        + "Positvo ou Negativo?\n"
+                        + "[-1]Sair\n"
+                        + "*******************\n"
+                        + "Digite um número: \n");
 
-            System.out.println("*******************\n"
-                    + "Resultado: \n" + verificarPositivoOuNegativo(entrada));
-        } while (entrada != -1);
+                entrada = scanner.nextDouble();
 
+                System.out.println("*******************\n"
+                        + "Resultado: \n" + verificarPositivoOuNegativo(entrada));
+            } while (entrada != -1);
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString() + " - Erro na operação!");
+        }
     }
 
     public static String verificarPositivoOuNegativo(Double entrada) {
