@@ -8,26 +8,33 @@ class NumeroInteiro {
 
         Double entrada;
 
-        do {
-            System.out.println("*******************\n"
-                    + "Numeros inteiros\n"
-                    + "[-1]Sair\n"
-                    + "*******************\n"
-                    + "Digite um número: \n");
+        try {
 
-            entrada = scanner.nextDouble();
+            do {
+                System.out.println("*******************\n"
+                        + "Numeros inteiros\n"
+                        + "[-1]Sair\n"
+                        + "*******************\n"
+                        + "Digite um número: \n");
 
-            System.out.println("*******************\n"
-                    + "Resultado: \n" + verificarNumeroInteiro(entrada));
-        } while (entrada != -1);
+                entrada = scanner.nextDouble();
 
+                System.out.println("*******************\n"
+                        + "Resultado: \n" + verificarNumeroInteiro(entrada));
+            } while (entrada != -1);
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString() + " - Erro na operação!");
+        }
     }
 
     public static String verificarNumeroInteiro(Double entrada) {
 
-        if (entrada % 1 == 0) {
-            return "É um número inteiro!";
+        int aux = entrada.intValue();
+
+        if (aux == entrada) {
+            return " É um número inteiro!";
         }
-        return "Não é um número inteiro!";
+        return " Não é um número inteiro!";
     }
 }
