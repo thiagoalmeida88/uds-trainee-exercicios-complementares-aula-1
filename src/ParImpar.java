@@ -7,20 +7,26 @@ class ParImpar {
 
         Integer entrada;
 
-        do {
-            System.out.println("**********************\n"
-                    + "Par ou ímpar?\n"
-                    + "[-1] Sair\n"
-                    + "**********************\n"
-                    + "Digite um número: ");
+        try {
 
-            entrada = scanner.nextInt();
+            do {
+                System.out.println("**********************\n"
+                        + "Par ou ímpar?\n"
+                        + "[-1] Sair\n"
+                        + "**********************\n"
+                        + "Digite um número: ");
+
+                entrada = scanner.nextInt();
 
 
-            System.out.println("***********************\n"
-                    + "Resultado: " + resultadoFinal(entrada));
+                System.out.println("***********************\n"
+                        + "Resultado: " + resultadoFinal(entrada));
 
-        } while (entrada != -1);
+            } while (entrada != -1);
+
+        } catch (Exception ex) {
+            System.out.println(ex.toString() + " - Erro na operação!");
+        }
     }
 
     public static String resultadoFinal(Integer entrada) {
